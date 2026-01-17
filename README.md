@@ -91,6 +91,12 @@ Przykladowo:
 - `flutter pub get`
 - `flutter run --dart-define=OWM_API_KEY=YOUR_KEY`
 
+## Testy
+Testy jednostkowe znajduja sie w katalogu `test/` i obejmuja m.in.:
+- formatowanie i konwersje jednostek (`unit_system_test.dart`),
+- mapowanie JSON do modeli oraz agregacje prognozy (`weather_models_test.dart`).
+Aby uruchomic testy, uzyj: `flutter test`.
+
 ## Ograniczenia
 Aplikacja zalezy od stabilnosci GPS i polaczenia sieciowego.
 W przypadku braku lokalizacji (np. emulator bez ustawionej pozycji) mozliwy
@@ -185,6 +191,12 @@ Key packages: `http`, `geolocator`, `intl`, `shared_preferences`,
 Example:
 - `flutter pub get`
 - `flutter run --dart-define=OWM_API_KEY=YOUR_KEY`
+
+## Tests
+Unit tests are located in `test/` and cover:
+- unit formatting and conversions (`unit_system_test.dart`),
+- JSON-to-model mapping and forecast aggregation (`weather_models_test.dart`).
+Run tests with: `flutter test`.
 
 ## Limitations
 The app depends on stable GPS and network connectivity. If location is
