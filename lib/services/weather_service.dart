@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_application/core/app_strings.dart';
 import 'package:flutter_application/core/unit_system.dart';
 import 'package:flutter_application/models/weather_models.dart';
@@ -110,6 +111,14 @@ class WeatherService {
     const apiKey = String.fromEnvironment('OWM_API_KEY');
     if (apiKey.isEmpty) {
       throw StateError(AppStrings(language).apiKeyMissing);
+    }
+
+    final dynamic connectivity = await Connectivity().checkConnectivity();
+    final hasConnection = connectivity is List<ConnectivityResult>
+        ? connectivity.any((result) => result != ConnectivityResult.none)
+        : connectivity != ConnectivityResult.none;
+    if (!hasConnection) {
+      throw StateError(AppStrings(language).errorNoInternet);
     }
 
     final uri = Uri.parse('$_base$path').replace(queryParameters: {

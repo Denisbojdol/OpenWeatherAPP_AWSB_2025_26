@@ -85,6 +85,9 @@ class AppStrings {
   String get errorLocationForever => isEnglish
       ? 'Location permissions are permanently denied. Change them in settings.'
       : 'Uprawnienia sa zablokowane na stale. Zmien je w ustawieniach.';
+  String get errorNoInternet => isEnglish
+      ? 'No internet connection.'
+      : 'Brak polaczenia z internetem.';
   String get errorTimeout => isEnglish
       ? 'Request timed out.'
       : 'Przekroczono czas oczekiwania na odpowiedz.';
