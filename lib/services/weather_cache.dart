@@ -62,10 +62,12 @@ class WeatherCache {
       final data = jsonDecode(raw) as Map<String, dynamic>;
       final unitSystem = unitSystemFromApiValue(data['unit'] as String?);
       final language = appLanguageFromApiValue(data['language'] as String?);
-      final currentJson =
-          Map<String, dynamic>.from(data['current'] as Map<dynamic, dynamic>);
-      final forecastJson =
-          Map<String, dynamic>.from(data['forecast'] as Map<dynamic, dynamic>);
+      final currentJson = Map<String, dynamic>.from(
+        data['current'] as Map<dynamic, dynamic>,
+      );
+      final forecastJson = Map<String, dynamic>.from(
+        data['forecast'] as Map<dynamic, dynamic>,
+      );
       final current = CurrentWeather.fromJson(
         currentJson,
         unitSystem,
@@ -84,8 +86,7 @@ class WeatherCache {
 
       return CachedWeather(
         bundle: bundle,
-        updatedAt:
-            DateTime.fromMillisecondsSinceEpoch(timestamp).toLocal(),
+        updatedAt: DateTime.fromMillisecondsSinceEpoch(timestamp).toLocal(),
         unitSystem: unitSystem,
         language: language,
         cityQuery: cityQuery,

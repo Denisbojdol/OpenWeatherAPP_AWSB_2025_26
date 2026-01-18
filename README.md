@@ -4,7 +4,7 @@
 Aplikacja mobilna prezentuje aktualna pogode oraz prognoze godzinowa i dzienna
 z serwisu OpenWeatherMap. Uzytkownik moze wyszukiwac miasta, pobierac pogode
 z lokalizacji GPS, odswiezac dane, przelaczac jednostki i jezyk, a takze
-zapisywac ulubione miasta. Projekt jest prosty, bez zewnetrznego backendu:
+zapisywac ulubione miasta. Projekt jest prosty w modelu SPA, bez zewnetrznego backendu:
 logika aplikacji i komunikacja z API odbywaja sie po stronie klienta.
 
 ## Architektura i struktura katalogow
